@@ -1,0 +1,66 @@
+<html>
+  <body>
+    <div class="brutalist-card">
+      <div id="brute">
+        <div class="brutalist-card__header">
+          <div class="brutalist-card__icon">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"
+              ></path>
+            </svg>
+          </div>
+          <div class="brutalist-card__alert">autoapply</div>
+        </div>
+        <div class="brutalist-card__message">
+          Welcome to AutoApply, a FREE, open source AI job application tool.
+          Select 'EDIT CONFIG' to set up model or press run to start!
+        </div>
+        <div class="brutalist-card__actions">
+          <a
+            class="brutalist-card__button brutalist-card__button--mark"
+            id="UploadResumeButton"
+            >Upload Resume</a
+          >
+          <a
+            class="brutalist-card__button brutalist-card__button--read"
+            href="#"
+            >Run Model</a
+          >
+        </div>
+      </div>
+      <div class="uploadContainer"></div>
+      <label for="file">
+        <section for="file" class="container" id="upload">
+          <div class="header" id="header">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+              <g
+                id="SVGRepo_tracerCarrier"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></g>
+              <g id="SVGRepo_iconCarrier">
+                <path
+                  d="M7 10V9C7 6.23858 9.23858 4 12 4C14.7614 4 17 6.23858 17 9V10C19.2091 10 21 11.7909 21 14C21 15.4806 20.1956 16.8084 19 17.5M7 10C4.79086 10 3 11.7909 3 14C3 15.4806 3.8044 16.8084 5 17.5M7 10C7.43285 10 7.84965 10.0688 8.24006 10.1959M12 12V21M12 12L15 15M12 12L9 15"
+                  stroke="#000000"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+              </g>
+            </svg>
+            <p>Drag and Drop or Click header!</p>
+          </div>
+        </section>
+      </label>
+      <input type="file" id="file" style="display: none" />
+    </div>
+  </body>
+  <link rel="stylesheet" href="/public/css/style.css" />
+  <script type="module" src="/public/js/main.js"></script>
+</html>
