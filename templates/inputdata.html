@@ -14,11 +14,11 @@
         <img src="/icons/document100by100.png" alt="" />
         <p>
           Fill out your application data for the AI model to use when filling
-          our job applications. All data is stored as local cookies on your
-          machine, and <u>nothing</u> is ever transmitted back to our servers.
+          out job applications. All data is stored as local cookies on your
+          machine, <u>nothing</u> is ever stored on any servers.
           <br />
           <br />
-          <a href="https://michaelrzg.github.io" target="_blank"
+          <a href="https://github.com/michaelrzg/AutoApply" target="_blank"
             >View source code </a
           >to see exactly how your data is handled.
         </p>
@@ -198,7 +198,7 @@
             type="text"
             name="apt   "
             id="apt"
-            placeholder="APT Number"
+            placeholder="Apartment Number or PO Box"
             class="formbold-form-input"
           />
         </div>
@@ -229,6 +229,34 @@
             >
               <option value="no">no</option>
               <option value="yes">yes</option>
+            </select>
+          </div>
+        </div>
+        <div class="formbold-input-flex">
+          <div>
+            <label class="formbold-form-label">Disability Status</label>
+
+            <select
+              class="formbold-form-input"
+              name="diability"
+              id="disability"
+            >
+              <option value="no">No I do not have a Disability</option>
+              <option value="yes">Yes I have a Disability</option>
+              <option value="noanswer">Prefer not to say</option>
+            </select>
+          </div>
+          <div>
+            <label class="formbold-form-label">Veteran Status</label>
+
+            <select
+              class="formbold-form-input"
+              name="legalauthorization"
+              id="legalauthorization"
+            >
+              <option value="no">No I am not a Veteran</option>
+              <option value="yes">Yes I am a Veteran</option>
+              <option value="noanswer">Prefer not to say</option>
             </select>
           </div>
         </div>
