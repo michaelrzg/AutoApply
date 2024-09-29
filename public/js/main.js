@@ -58,15 +58,27 @@ function initUploader() {
 }
 const handleDrop = (e) => {
   const data = e.dataTransfer;
-  const file = data.files;
+  const file = data.files[0];
   console.log(file);
   resume = file;
 
+  const formdata = new FormData();
+  formdata.append("resume", file);
+  parsePDF(formdata);
   // placeholder:
   uploadPage.style.display = "none";
   home.style.display = "block";
 };
 
+async function parsePDF(data) {
+  let response = await fetch("http://127.0.0.1:5000/parsePDF", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/pdf",
+    },
+    body: data,
+  });
+}
 // MAIN:
 
 // variable holds the resume file
