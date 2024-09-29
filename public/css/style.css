@@ -181,3 +181,11 @@
 #file {
   display: none;
 }
+
+#feedme {
+  display: none;
+  z-index: 10;
+}
+#coulddiv {
+  z-index: 5;
+}
