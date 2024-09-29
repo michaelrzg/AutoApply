@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/x-icon" href="/icons/document100by100.png" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Application Data</title>
+  </head>
+  <body>
+    <div class="formbold-main-wrapper">
+      <!-- Author: FormBold Team -->
+      <!-- Learn More: https://formbold.com -->
+      <div class="header-info">
+        <img src="/icons/document100by100.png" alt="" />
+        <p>
+          Fill out your application data for the AI model to use when filling
+          our job applications. All data is stored as local cookies on your
+          machine, and <u>nothing</u> is ever transmitted back to our servers.
+          <br />
+          <br />
+          <a href="https://michaelrzg.github.io" target="_blank"
+            >View source code </a
+          >to see exactly how your data is handled.
+        </p>
+      </div>
+    </div>
+    <div class="formbold-form-wrapper">
+      <form action="https://formbold.com/s/FORM_ID" method="POST">
+        <div class="formbold-input-flex">
+          <div>
+            <label for="firstname" class="formbold-form-label">
+              First Name
+            </label>
+            <input
+              type="text"
+              name="firstname"
+              id="firstname"
+              placeholder="Your first name"
+              class="formbold-form-input"
+            />
+          </div>
+
+          <div>
+            <label for="lastname" class="formbold-form-label">
+              Last Name
+            </label>
+            <input
+              type="text"
+              name="lastname"
+              id="lastname"
+              placeholder="Your last name"
+              class="formbold-form-input"
+            />
+          </div>
+        </div>
+
+        <div class="formbold-input-flex">
+          <div>
+            <label for="email" class="formbold-form-label"> Email </label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="example@email.com"
+              class="formbold-form-input"
+            />
+          </div>
+
+          <div>
+            <label class="formbold-form-label">Gender</label>
+
+            <select
+              class="formbold-form-input"
+              name="occupation"
+              id="occupation"
+            >
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="others">Others</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="formbold-mb-3 formbold-input-wrapp">
+          <label for="phone" class="formbold-form-label"> Phone </label>
+
+          <div>
+            <input
+              type="text"
+              name="phone"
+              id="phone"
+              placeholder="Phone number"
+              class="formbold-form-input"
+            />
+          </div>
+        </div>
+
+        <div class="formbold-mb-3">
+          <label for="dob" class="formbold-form-label">
+            When can you start?
+          </label>
+          <input type="date" name="dob" id="dob" class="formbold-form-input" />
+        </div>
+
+        <div class="formbold-mb-3">
+          <label for="address" class="formbold-form-label"> Address </label>
+
+          <input
+            type="text"
+            name="Street"
+            id="address"
+            placeholder="Street address"
+            class="formbold-form-input formbold-mb-3"
+          />
+          <label for="address" class="formbold-form-label"> City </label>
+          <input
+            type="text"
+            name="city"
+            id="city"
+            placeholder="City"
+            class="formbold-form-input"
+          />
+          <div class="formbold-input-flex">
+            <label for="address" class="formbold-form-label"> State </label>
+
+            <select class="formbold-form-input" name="state" id="state">
+              <option value="AL">Alabama</option>
+              <option value="AK">Alaska</option>
+              <option value="AZ">Arizona</option>
+              <option value="AR">Arkansas</option>
+              <option value="CA">California</option>
+              <option value="CO">Colorado</option>
+              <option value="CT">Connecticut</option>
+              <option value="DE">Delaware</option>
+              <option value="DC">District Of Columbia</option>
+              <option value="FL">Florida</option>
+              <option value="GA">Georgia</option>
+              <option value="HI">Hawaii</option>
+              <option value="ID">Idaho</option>
+              <option value="IL">Illinois</option>
+              <option value="IN">Indiana</option>
+              <option value="IA">Iowa</option>
+              <option value="KS">Kansas</option>
+              <option value="KY">Kentucky</option>
+              <option value="LA">Louisiana</option>
+              <option value="ME">Maine</option>
+              <option value="MD">Maryland</option>
+              <option value="MA">Massachusetts</option>
+              <option value="MI">Michigan</option>
+              <option value="MN">Minnesota</option>
+              <option value="MS">Mississippi</option>
+              <option value="MO">Missouri</option>
+              <option value="MT">Montana</option>
+              <option value="NE">Nebraska</option>
+              <option value="NV">Nevada</option>
+              <option value="NH">New Hampshire</option>
+              <option value="NJ">New Jersey</option>
+              <option value="NM">New Mexico</option>
+              <option value="NY">New York</option>
+              <option value="NC">North Carolina</option>
+              <option value="ND">North Dakota</option>
+              <option value="OH">Ohio</option>
+              <option value="OK">Oklahoma</option>
+              <option value="OR">Oregon</option>
+              <option value="PA">Pennsylvania</option>
+              <option value="RI">Rhode Island</option>
+              <option value="SC">South Carolina</option>
+              <option value="SD">South Dakota</option>
+              <option value="TN">Tennessee</option>
+              <option value="TX">Texas</option>
+              <option value="UT">Utah</option>
+              <option value="VT">Vermont</option>
+              <option value="VA">Virginia</option>
+              <option value="WA">Washington</option>
+              <option value="WV">West Virginia</option>
+              <option value="WI">Wisconsin</option>
+              <option value="WY">Wyoming</option>
+            </select>
+            <label for="address" class="formbold-form-label"> Zip </label>
+            <input
+              type="text"
+              name="zip"
+              id="zip"
+              placeholder="Zip Code"
+              class="formbold-form-input"
+            />
+          </div>
+          <label for="address" class="formbold-form-label">
+            Apartment Number or PO Box
+          </label>
+
+          <input
+            type="text"
+            name="apt   "
+            id="apt"
+            placeholder="APT Number"
+            class="formbold-form-input"
+          />
+        </div>
+
+        <div class="formbold-mb-3">
+          <label for="message" class="formbold-form-label">
+            Cover Letter
+          </label>
+          <textarea
+            rows="6"
+            name="message"
+            id="message"
+            class="formbold-form-input"
+          ></textarea>
+        </div>
+
+        <div class="formbold-form-file-flex">
+          <label for="upload" class="formbold-form-label">
+            Upload Resume
+          </label>
+          <input
+            type="file"
+            name="upload"
+            id="upload"
+            class="formbold-form-file"
+          />
+        </div>
+
+        <button class="formbold-btn">Apply Now</button>
+      </form>
+    </div>
+    <style>
+      .header-info {
+        display: flex;
+        align-items: center; /* Aligns image and text vertically centered */
+        gap: 15px; /* Adds space between the image and the text */
+        font-size: large;
+        margin: 0 auto;
+        max-width: 570px;
+        width: 100%;
+        background: white;
+        float: right;
+      }
+
+      .header-info img {
+        width: 100px; /* Adjust the image size if needed */
+        height: 100px;
+      }
+
+      .header-info p {
+        margin: 0; /* Remove margin from the paragraph to keep it aligned */
+      }
+
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Inter", sans-serif;
+      }
+      .formbold-mb-3 {
+        margin-bottom: 15px;
+      }
+
+      .formbold-main-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 48px;
+      }
+
+      .formbold-form-wrapper {
+        margin: 0 auto;
+        max-width: 570px;
+        width: 100%;
+        background: white;
+        padding: 40px;
+      }
+
+      .formbold-img {
+        display: block;
+        margin: 0 auto 45px;
+      }
+
+      .formbold-input-wrapp > div {
+        display: flex;
+        gap: 20px;
+      }
+
+      .formbold-input-flex {
+        display: flex;
+        gap: 20px;
+        margin-bottom: 15px;
+        margin-top: 15px;
+      }
+      .formbold-input-flex > div {
+        width: 50%;
+      }
+      .formbold-form-input {
+        width: 100%;
+        padding: 13px 22px;
+        border-radius: 5px;
+        border: 1px solid #dde3ec;
+        background: #ffffff;
+        font-weight: 500;
+        font-size: 16px;
+        color: #536387;
+        outline: none;
+        resize: none;
+      }
+      .formbold-form-input::placeholder,
+      select.formbold-form-input,
+      .formbold-form-input[type="date"]::-webkit-datetime-edit-text,
+      .formbold-form-input[type="date"]::-webkit-datetime-edit-month-field,
+      .formbold-form-input[type="date"]::-webkit-datetime-edit-day-field,
+      .formbold-form-input[type="date"]::-webkit-datetime-edit-year-field {
+        color: rgba(83, 99, 135, 0.5);
+      }
+
+      .formbold-form-input:focus {
+        border-color: #6a64f1;
+        box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
+      }
+      .formbold-form-label {
+        color: #07074d;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 24px;
+        display: block;
+        margin-bottom: 10px;
+      }
+
+      .formbold-form-file-flex {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+      .formbold-form-file-flex .formbold-form-label {
+        margin-bottom: 0;
+      }
+      .formbold-form-file {
+        font-size: 14px;
+        line-height: 24px;
+        color: #536387;
+      }
+      .formbold-form-file::-webkit-file-upload-button {
+        display: none;
+      }
+      .formbold-form-file:before {
+        content: "Upload file";
+        display: inline-block;
+        background: #eeeeee;
+        border: 0.5px solid #fbfbfb;
+        box-shadow: inset 0px 0px 2px rgba(0, 0, 0, 0.25);
+        border-radius: 3px;
+        padding: 3px 12px;
+        outline: none;
+        white-space: nowrap;
+        -webkit-user-select: none;
+        cursor: pointer;
+        color: #637381;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 16px;
+        margin-right: 10px;
+      }
+
+      .formbold-btn {
+        text-align: center;
+        width: 100%;
+        font-size: 16px;
+        border-radius: 5px;
+        padding: 14px 25px;
+        border: none;
+        font-weight: 500;
+        background-color: #6a64f1;
+        color: white;
+        cursor: pointer;
+        margin-top: 25px;
+      }
+      .formbold-btn:hover {
+        box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
+      }
+
+      .formbold-w-45 {
+        width: 45%;
+      }
+    </style>
+  </body>
+</html>

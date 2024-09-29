@@ -3,6 +3,7 @@
 // initilize some elements to variables for easier access and add
 function init() {
   uploadButton = document.getElementById("UploadResumeButton");
+  inputdatabutton = document.getElementById("inputdatabutton");
   home = document.getElementById("brute");
   uploadPage = document.getElementById("upload");
   uploadPage.style.display = "none";
@@ -13,6 +14,9 @@ function init() {
     document.getElementById("brute").style.display = "none";
     // initilize file uploader code
     initUploader();
+  };
+  inputdatabutton.onclick = () => {
+    window.open("/templates/inputdata.html");
   };
 }
 // this function sets up the uploader
@@ -62,29 +66,19 @@ const handleDrop = (e) => {
   console.log(file);
   resume = file;
 
-  const formdata = new FormData();
-  formdata.append("resume", file);
-  parsePDF(formdata);
   // placeholder:
   uploadPage.style.display = "none";
   home.style.display = "block";
 };
 
-async function parsePDF(data) {
-  let response = await fetch("http://127.0.0.1:5000/parsePDF", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/pdf",
-    },
-    body: data,
-  });
-}
 // MAIN:
 
 // variable holds the resume file
 var resume;
 // upload button on home page
 var uploadButton;
+// inputdata button
+var inputdatabutton;
 // home page tile
 var home;
 // upload page tile

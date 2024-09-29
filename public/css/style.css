@@ -124,11 +124,10 @@
 /* From Uiverse.io by vinodjangid07 */
 .uploadContainer {
   display: none;
-  height: 500px;
 }
 /* From Uiverse.io by Yaya12085 */
 .container {
-  height: 278px;
+  height: 320;
   width: 300px;
   border-radius: 10px;
   box-shadow: 4px 4px 30px rgba(0, 0, 0, 0.2);
@@ -162,6 +161,7 @@
 .header p {
   text-align: center;
   color: black;
+  user-select: none;
 }
 
 .footer {
@@ -188,4 +188,7 @@
 }
 #coulddiv {
   z-index: 5;
+}
+#headerptext {
+  user-select: none;
 }
