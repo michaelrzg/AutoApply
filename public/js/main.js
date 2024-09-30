@@ -18,6 +18,13 @@ function init() {
   inputdatabutton.onclick = () => {
     window.open("/templates/inputdata.html");
   };
+
+  bodytag = document.getElementById("body");
+
+  // set size of body to main divs size\
+  html = document.getElementById("html");
+ 
+  console.log(html.clientHeight)
 }
 // this function sets up the uploader
 function initUploader() {
@@ -72,7 +79,9 @@ const handleDrop = (e) => {
 };
 
 // MAIN:
-
+//html tags 
+var bodytag;
+var html;
 // variable holds the resume file
 var resume;
 // upload button on home page
