@@ -169,6 +169,7 @@ body{
 
 .header svg {
   height: 100px;
+  pointer-events: none;
 }
 
 .header p {

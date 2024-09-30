@@ -24,7 +24,7 @@ function init() {
   // set size of body to main divs size\
   html = document.getElementById("html");
  
-  console.log(html.clientHeight)
+  //console.log(html.clientHeight)
 }
 // this function sets up the uploader
 function initUploader() {
