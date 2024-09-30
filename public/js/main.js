@@ -208,10 +208,9 @@ var addExperienceCount = 1;
 const userdata = new Map();
 //submit button
 
-// initilize our variables
+// determine flow based on who called main.js script
 if (window.location.pathname == "/index.html") {
   init();
 } else {
   initInputPage();
 }
-console.log(document.cookie);

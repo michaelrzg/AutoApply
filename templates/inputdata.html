@@ -777,8 +777,44 @@
           </div>
         </div>
         <button class="formbold-btn" id="addExperience">
-          Add Another Experience
+          Add Another Position
         </button>
+
+        <div class="formbold-input-flex">
+          <div>
+            <label class="formbold-form-label">Expected Compensation</label>
+
+            <input
+              class="formbold-form-input"
+              name="comp"
+              id="comp"
+              placeholder="$/hour"
+            />
+          </div>
+          <div>
+            <label for="relocate" class="formbold-form-label"
+              >Willing to Relocate?</label
+            >
+
+            <select class="formbold-form-input" name="relocate" id="relocate">
+              <option value="none">Select Option</option>
+              <option value="no">No I am not willing to relocate</option>
+              <option value="yes">Yes I am willing to relocate</option>
+              <option value="maybe">Maybe</option>
+            </select>
+          </div>
+        </div>
+        <label for="portfolio" class="formbold-form-label">
+          Link to Portfolio
+        </label>
+
+        <input
+          type="text"
+          name="portfolio"
+          id="portfolio"
+          placeholder="www.yourname.com"
+          class="formbold-form-input formbold-mb-3"
+        />
         <button class="formbold-btn" id="submitbtn">Save</button>
       </div>
     </div>
