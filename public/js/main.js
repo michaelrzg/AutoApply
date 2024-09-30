@@ -7,6 +7,8 @@ function init() {
   home = document.getElementById("brute");
   uploadPage = document.getElementById("upload");
   uploadPage.style.display = "none";
+  bodytag = document.getElementById("body");
+  html = document.getElementById("html");
   // set onClick functionality for our upload button:
   uploadButton.onclick = function () {
     // make upload tile visible
@@ -19,12 +21,8 @@ function init() {
     window.open("/templates/inputdata.html");
   };
 
-  bodytag = document.getElementById("body");
 
-  // set size of body to main divs size\
-  html = document.getElementById("html");
- 
-  //console.log(html.clientHeight)
+  console.log("initilization complete")
 }
 // this function sets up the uploader
 function initUploader() {
@@ -78,6 +76,36 @@ const handleDrop = (e) => {
   home.style.display = "block";
 };
 
+function submit(){
+  // get all text inputs
+  document.getElementById("form").querySelectorAll('input').forEach((e) =>{
+    if (e.name == "current"){
+     userdata.set(e.name,e.checked)
+    }
+    else{
+      userdata.set(e.name, e.value)
+    }
+  })
+  //get all drop down select inputs
+  document.getElementById("form").querySelectorAll('select').forEach((e) =>{
+    if (e.value != "none"){
+      userdata.set(e.name,e.value) }
+      else{
+        userdata.set(e.name,"")
+      }
+  })
+    //get all textarea (job description boxes)
+    document.getElementById("form").querySelectorAll('textarea').forEach((e) =>{
+      if (e.value != "none"){
+        userdata.set(e.name,e.value) }
+        else{
+          userdata.set(e.name,"")
+        }
+    })
+  console.log(userdata)
+}
+
+
 // MAIN:
 //html tags 
 var bodytag;
@@ -93,5 +121,30 @@ var home;
 // upload page tile
 var uploadPage;
 
+const userdata = new Map()
+//submit button 
+
 // initilize our variables
-init();
+if(window.location.pathname == '/index.html'){
+  init();
+}
+else{
+  document.getElementById("exp1end").style.display = "none"
+  document.getElementById("exp1label").style.display = "none"
+  document.getElementById("submitbtn").addEventListener("click",() =>{
+    submit()
+  })
+  document.getElementById("current").addEventListener("click", ()=>{
+   switch (document.getElementById("current").checked){
+    case false:
+      document.getElementById("exp1end").style.display = "block";
+        document.getElementById("exp1label").style.display = "block"
+      break;
+    case true:
+      document.getElementById("exp1end").style.display = "none";
+        document.getElementById("exp1label").style.display = "none"
+
+   }
+  })
+}
+
