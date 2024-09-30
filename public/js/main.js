@@ -31,30 +31,36 @@ function initUploader() {
   const beforestate = droparea.innerHTML;
   // DEFINE states for drop area
   // active = a file is currently hovering above the drop zone
+  // turns droparea green and updates image to ee image
   const active = () => {
     document.getElementById("cloudsvg").style.display = "none";
     document.getElementById("feedme").style.display = "block";
     document.getElementById("headerptext").innerHTML = "FEED ME";
   };
-  // a file is hovering on screen, but is not over teh drop zone
+  // inactive =a file is hovering on screen, but is not over teh drop zone
   const inactive = () => {
     droparea.style.borderColor = "black";
     droparea.innerHTML = beforestate;
   };
+  // default
   const prevents = (e) => e.preventDefault();
 
+  // add prevents (defualt handling) to drag events over the drop area
   ["dragenter", "dragover", "dragleave", "drop"].forEach((eventName) => {
     droparea.addEventListener(eventName, prevents);
   });
-
+  // add  drag-enter and drag-over events to drop-area and callback active function
   ["dragenter", "dragover"].forEach((eventName) => {
     droparea.addEventListener(eventName, active);
   });
+  // add drag-leave and drop events to drop-area and callback inactive function
   ["dragleave", "drop"].forEach((eventName) => {
     droparea.addEventListener(eventName, inactive);
   });
-  droparea.addEventListener("drop", handleDrop);
 
+  // handle when the file is dropped into the drop-area
+  droparea.addEventListener("drop", handleDrop);
+  // called when user clicks on upload to open a file explorer and manually upload, rather than drag and drop
   uploadManually.addEventListener("change", (e) => {
     const file = e.target.files;
     console.log(file);
@@ -64,6 +70,7 @@ function initUploader() {
     home.style.display = "block";
   });
 }
+// handle when user drops a file over the drop-area
 const handleDrop = (e) => {
   const data = e.dataTransfer;
   const file = data.files[0];
@@ -75,6 +82,8 @@ const handleDrop = (e) => {
   home.style.display = "block";
 };
 
+// handle submit button pressed on data entry page
+// this function grabs all data entered on page and puts it into Map
 function submit() {
   // get all text inputs
   document
@@ -83,8 +92,10 @@ function submit() {
     .forEach((e) => {
       if (e.name == "current") {
         userdata.set(e.name, e.checked);
+        setCookie(e.name, e.checked);
       } else {
         userdata.set(e.name, e.value);
+        setCookie(e.name, e.value);
       }
     });
   //get all drop down select inputs
@@ -94,8 +105,10 @@ function submit() {
     .forEach((e) => {
       if (e.value != "none") {
         userdata.set(e.name, e.value);
+        setCookie(e.name, e.value);
       } else {
         userdata.set(e.name, "");
+        setCookie(e.name, "");
       }
     });
   //get all textarea (job description boxes)
@@ -105,12 +118,40 @@ function submit() {
     .forEach((e) => {
       if (e.value != "none") {
         userdata.set(e.name, e.value);
+        setCookie(e.name, e.value);
       } else {
         userdata.set(e.name, "");
+        setCookie(e.name, "");
       }
     });
+  // debug
   console.log(userdata);
 }
+// function to set a browser cookie
+function setCookie(name, value) {
+  var expires = "";
+  var date = new Date();
+  date.setTime(date.getTime() + 365 * 24 * 60 * 60 * 1000);
+  expires = "; expires=" + date.toUTCString();
+
+  document.cookie = name + "=" + (value || "") + expires + "; path=/";
+}
+function getCookie(cname) {
+  let name = cname + "=";
+  let decodedCookie = decodeURIComponent(document.cookie);
+  let ca = decodedCookie.split(";");
+  for (let i = 0; i < ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == " ") {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+// initilize the input page (only runs when input page calls this script on launch, popup page can not access these values)
 function initInputPage() {
   //add experience button
   addExperienceButton = document.getElementById("addExperience");
@@ -173,3 +214,4 @@ if (window.location.pathname == "/index.html") {
 } else {
   initInputPage();
 }
+console.log(document.cookie);
