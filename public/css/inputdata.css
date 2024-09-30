@@ -155,3 +155,9 @@ select.formbold-form-input,
 .formbold-w-45 {
   width: 45%;
 }
+#experience2,
+#experience3,
+#exp1end,
+#exp1endlabel {
+  display: none;
+}

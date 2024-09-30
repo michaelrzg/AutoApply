@@ -111,6 +111,38 @@ function submit() {
     });
   console.log(userdata);
 }
+function initInputPage() {
+  //add experience button
+  addExperienceButton = document.getElementById("addExperience");
+  document.getElementById("submitbtn").addEventListener("click", () => {
+    submit();
+  });
+  document.getElementById("current").addEventListener("click", () => {
+    switch (document.getElementById("current").checked) {
+      case false:
+        document.getElementById("exp1end").style.display = "block";
+        document.getElementById("exp1endlabel").style.display = "block";
+        break;
+      case true:
+        document.getElementById("exp1end").style.display = "none";
+        document.getElementById("exp1endlabel").style.display = "none";
+    }
+  });
+  addExperienceButton.addEventListener("click", () => {
+    addExperienceCount++;
+    switch (addExperienceCount) {
+      case 2:
+        document.getElementById("experience2").style.display = "block";
+        break;
+      case 3:
+        document.getElementById("experience3").style.display = "block";
+        addExperienceButton.style.display = "none";
+        break;
+      default:
+        console.log("add experinece pressed: " + addExperienceCount);
+    }
+  });
+}
 
 // MAIN:
 //html tags
@@ -126,6 +158,11 @@ var inputdatabutton;
 var home;
 // upload page tile
 var uploadPage;
+//experience section
+var addExperienceSection;
+
+var addExperienceButton;
+var addExperienceCount = 1;
 
 const userdata = new Map();
 //submit button
@@ -134,20 +171,5 @@ const userdata = new Map();
 if (window.location.pathname == "/index.html") {
   init();
 } else {
-  document.getElementById("exp1end").style.display = "none";
-  document.getElementById("exp1label").style.display = "none";
-  document.getElementById("submitbtn").addEventListener("click", () => {
-    submit();
-  });
-  document.getElementById("current").addEventListener("click", () => {
-    switch (document.getElementById("current").checked) {
-      case false:
-        document.getElementById("exp1end").style.display = "block";
-        document.getElementById("exp1label").style.display = "block";
-        break;
-      case true:
-        document.getElementById("exp1end").style.display = "none";
-        document.getElementById("exp1label").style.display = "none";
-    }
-  });
+  initInputPage();
 }
