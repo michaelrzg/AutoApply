@@ -78,13 +78,15 @@ body {
   outline: none;
   resize: none;
 }
-.formbold-form-input::placeholder,
-select.formbold-form-input,
+.formbold-form-input::placeholder {
+  color: rgba(83, 99, 135, 0.5);
+}
+select.formbold-form-input:first,
 .formbold-form-input[type="date"]::-webkit-datetime-edit-text,
 .formbold-form-input[type="date"]::-webkit-datetime-edit-month-field,
 .formbold-form-input[type="date"]::-webkit-datetime-edit-day-field,
 .formbold-form-input[type="date"]::-webkit-datetime-edit-year-field {
-  color: rgba(83, 99, 135, 0.5);
+  color: black;
 }
 
 .formbold-form-input:focus {
@@ -160,4 +162,8 @@ select.formbold-form-input,
 #exp1end,
 #exp1endlabel {
   display: none;
+}
+
+#exp1start {
+  color: black;
 }

@@ -158,17 +158,9 @@ function initInputPage() {
   document.getElementById("submitbtn").addEventListener("click", () => {
     submit();
   });
-  document.getElementById("current").addEventListener("click", () => {
-    switch (document.getElementById("current").checked) {
-      case false:
-        document.getElementById("exp1end").style.display = "block";
-        document.getElementById("exp1endlabel").style.display = "block";
-        break;
-      case true:
-        document.getElementById("exp1end").style.display = "none";
-        document.getElementById("exp1endlabel").style.display = "none";
-    }
-  });
+  // make theh 'current position' checkbox enable and disable the end date input  based on checked status
+  document.getElementById("current").addEventListener("click", updateCurrent);
+  // add experience button populates a new experience set of feilds on the screen
   addExperienceButton.addEventListener("click", () => {
     addExperienceCount++;
     switch (addExperienceCount) {
@@ -183,6 +175,52 @@ function initInputPage() {
         console.log("add experinece pressed: " + addExperienceCount);
     }
   });
+  prefillFromCookies();
+}
+function updateCurrent() {
+  switch (document.getElementById("current").checked) {
+    case false:
+      document.getElementById("exp1end").style.display = "block";
+      document.getElementById("exp1endlabel").style.display = "block";
+      break;
+    case true:
+      document.getElementById("exp1end").style.display = "none";
+      document.getElementById("exp1endlabel").style.display = "none";
+  }
+}
+// prefill inputs of input page based on previous inputs
+function prefillFromCookies() {
+  document
+    .getElementById("form")
+    .querySelectorAll("input")
+    .forEach((e) => {
+      if (e.name == "current") {
+        e.checked = getCookie(e.name);
+      } else {
+        e.value = getCookie(e.name);
+      }
+    });
+  //get all drop down select inputs
+  document
+    .getElementById("form")
+    .querySelectorAll("select")
+    .forEach((e) => {
+      for (var i = 0; i < e.options.length; i++) {
+        if (e.options[i].value == getCookie(e.name)) {
+          e.options.selectedIndex = i;
+        }
+      }
+    });
+  //get all textarea (job description boxes)
+  document
+    .getElementById("form")
+    .querySelectorAll("textarea")
+    .forEach((e) => {
+      if (e.value != "none") {
+        e.value = getCookie(e.name);
+      }
+    });
+  updateCurrent();
 }
 
 // MAIN:
@@ -214,3 +252,4 @@ if (window.location.pathname == "/index.html") {
 } else {
   initInputPage();
 }
+console.log(document.cookie);
