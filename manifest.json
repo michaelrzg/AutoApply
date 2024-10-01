@@ -2,6 +2,13 @@
   "manifest_version": 3,
   "name": "AutoApply",
   "description": "Base Level Extension",
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["public/js/loadhtml.js"]
+    }
+  ],
+  "permissions": ["activeTab", "scripting"],
   "version": "1.0",
   "action": {
     "default_popup": "index.html",

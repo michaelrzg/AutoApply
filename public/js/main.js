@@ -20,7 +20,7 @@ function init() {
   inputdatabutton.onclick = () => {
     window.open("/templates/inputdata.html");
   };
-
+  grabHTML();
   console.log("initilization complete");
 }
 // this function sets up the uploader
@@ -223,6 +223,19 @@ function prefillFromCookies() {
   updateCurrent();
 }
 
+function grabHTML() {
+  // add listener to grab host page html for parsing
+  chrome.runtime.onMessage.addListener(function (
+    request,
+    sender,
+    sendResponse
+  ) {
+    console.log(sender.tab ? "HTML GRABBED BY AUTOAPPLY:" + request.html : "");
+    if (request.greeting === "hello") sendResponse({ farewell: "goodbye" });
+  });
+  chrome.tabs.reload();
+}
+
 // MAIN:
 //html tags
 var bodytag;
@@ -252,4 +265,3 @@ if (window.location.pathname == "/index.html") {
 } else {
   initInputPage();
 }
-console.log(document.cookie);
